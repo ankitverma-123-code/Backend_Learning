@@ -1,0 +1,16 @@
+body{
+    background-color: #f2f2f2;
+    margin: 0px;
+    padding: 0px;
+}
+.home{
+    padding: 2rem;
+}
+
+.entry{
+    padding: 1rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    border: 1px solid rgb(226, 220, 114);
+    border-radius: 5px;
+}
