@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/style.css" />
+    <title>ToDo List</title>
+  </head>
+  <body>
+    <div class="home">
+      <h1>ToDo List</h1>
+
+      <form action="/" method="post">
+        <input type="text" name="task" placeholder="Title" />
+        <input type="text" name="Description" placeholder="Description" />
+        <input type="submit" value="Create" />
+      </form>
+      <div class="list">
+        <div class="entry">
+          <form action="/edit/<%=task._id%>" method="post">
+            <input
+              type="text"
+              name="task"
+              placeholder="Title"
+              value="<%= task.task %>"
+            />
+            <input
+              type="text"
+              name="Description"
+              placeholder="Description"
+              value="<%= task.Description %>"
+            />
+            <input type="submit" value="Submit" />
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -97,6 +97,30 @@ app.post("/edit/:id",(req, res) =>{
     );
   });
 
+
+  //delete the task
+  app.get("/delete/:id", function (req, res) {
+    ToDo.deleteOne({ _id: req.params.id }, function (err) {
+      if (err) {
+        console.log(err);
+      } else {
+        res.redirect("/");
+      }
+    });
+  });
+  
+  app.get("/edit2/:id", function (req, res) {
+    var id = req.params.id;
+  
+    ToDo.findById(id, function (err, data) {
+      if (err) {
+        console.log(err);
+      } else {
+        res.render("edit2", { task: data });
+      }
+    });
+  });
+
 app.listen(3000, () => { 
     console.log("Server is running on port 3000");
 });
